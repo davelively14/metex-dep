@@ -1,7 +1,8 @@
 defmodule Metex.Worker do
 
   def temperature_of(location) do
-    url_for(location)
+    location
+    |> url_for
     |> HTTPoison.get
     |> parse_response
     |> case do
