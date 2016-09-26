@@ -1,13 +1,15 @@
 defmodule Metex.Worker do
 
   def temperature_of(location) do
-    result = url_for(location) |> HTTPoison.get |> parse_response
-    case result do
-      {:ok, temp} ->
-        "#{location}: #{temp}°C"
-      :error ->
-        "#{location} not found"
-    end
+    url_for(location)
+    |> HTTPoison.get
+    |> parse_response
+    |> case do
+        {:ok, temp} ->
+          "#{location}: #{temp}°C"
+        :error ->
+          "#{location} not found"
+      end
   end
 
   defp url_for(location) do
