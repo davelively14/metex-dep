@@ -22,3 +22,6 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
     end
     ```
 
+## Copy and Paste for iex pseudo test data
+
+cities = ["Atlanta", "Boston", "Charlotte", "New York", "Dallas"]
